@@ -1,0 +1,194 @@
+
+{% extends 'firstapp/index.html' %}
+
+{% load staticfiles %}
+{% block content %}
+<head>
+	<title>info</title>
+	
+<body>
+<a href="/Search/">Back</a>
+	<center>
+<h1>Hall Details</h1>
+
+
+<!-- 
+<table cellspacing="10" cellpadding="10" border="0">
+	<thead><th>Admin ID</th>
+	<td>:</td>
+		<th>Admin Name</th>
+		<td>:</td>
+		<th>Email</th>
+		<td>:</td>
+		<th>password</th>
+		<td>:</td>
+		<th>Hall Name</th>
+		<td>:</td>
+		<th>Hall Address</th>
+		<td>:</td>
+		<th>Hall Price</th>
+		<td>:</td>
+		<th>Hall Capacity</th>
+		<td>:</td>
+		<th>Mobile number</th>
+		<td>:</td>
+		<th>hall image</th>
+		<td>:</td>
+	</thead>
+	<tr>
+		{% for a , b,c,d,e,f,g,h,i,j,k in records%}
+		<td>{{a}}</td>
+		<td>{{b}} {{c}}</td>
+		<td>{{d}}</td>
+		<td>{{e}}</td>
+		<td>{{f}}</td>
+		<td>{{g}}</td>
+		<td>{{h}}</td>
+		<td>{{i}}</td>
+		<td>{{j}}</td>
+		<td>{{k}}</td>
+	</tr>
+	
+</table> -->
+
+
+{% for a2 , b2,c2,d2,e2,f2,g2,h2,i2,j2,k2 in records%}
+
+<div >	
+<img class="img-fluid img-responsive" src="	{% static 'images_uploaded/hall1.jpg' %}"  alt="Card image cap"><br>
+<img class="img-fluid" src="{% static 'images_uploaded/{{k}}' %}"  alt="{{k}}"><br>	</div>
+<table cellspacing="10"  cellpadding="10" border="0" style=""  class="tbl-content">
+	
+
+	<tr>
+		<th>Admin Name</th>
+		<td>:</td>
+		<td>{{b2}} {{c2}}</td>
+	</tr>
+	<tr>
+		<th>Hall Name</th>
+		<td>:</td>
+		<td>{{f2}}</td>
+	</tr>
+	<tr>
+		<th>Hall Adress</th>
+		<td>:</td>
+		<td>{{g2}}</td>
+	</tr>
+	<tr>
+		<th>Email</th>
+		<td>:</td>
+		<td>{{d2}}</td>
+	</tr>
+	<tr>
+		<th>Mobile Number</th>
+		<td>:</td>
+		<td>{{j2}}</td>
+	</tr>
+
+	<!--  -->
+	<tr>
+		<th>Hall Price</th>
+		<td>:</td>
+		<td>{{h2}}/-₹</td>
+	</tr>
+	<tr>
+		<th>Hall Capacity</th>
+		<td>:</td>
+		<td>{{i2}}</td>
+	</tr>
+	
+
+{% endfor %}
+</table>
+</center>
+
+<br>
+	<form action="" method="POST">
+ {% csrf_token %} 
+
+
+		 	<!-- <center><h1 style="padding: 02px;">Log In to book</h1></center>
+		 
+						<div style="padding:100px;">
+							
+							<div class="">
+						<h2>Username </h2>
+						<input class="form-control" type="text" placeholder="EmailId" name="txtuser_email" class=""></div>
+						
+					
+					
+					<div class="" >
+						
+						<h2>Password </h2>
+						<input class="form-control" type="password" placeholder="password"  name="txtuser_password" class="">
+					</div>
+					<div>
+						<h2>Amount </h2>
+						<input class="form-control" type="number" name="txt_user_amount" placeholder="{{h}}" >
+					</div>
+					<div>
+						<h2>Amount </h2>
+						<input class="form-control" type="date" name="txt_user_date" >
+					</div>
+					<div >
+					<center><input class="form-control" type="submit" name="" value="Boook" ><span >&nbsp;&nbsp;&nbsp;</span><input class="form-control" type="button" name="" value="cancel" ></center></div>
+					
+					<div  ><h5>New User <a href="/user-registration/">SignUp Here</a></h5><center>
+					</center></div>
+						</div> -->
+		
+			
+
+	<section  style="padding: 10%;" class="info-form-ke-uperwala">
+<br>
+		<center>
+	<div 	style="border:2px solid red; " >
+	<h1 >Log In to book</h1><br>
+
+	<table cellspacing="10" cellpadding="10" border="0" class="tbl-content" >	
+	<tr>
+		<th>Username</th>
+		<td>:</td>
+		<td><input class="form-control" type="text" placeholder="EmailId" name="txtuser_email" class=""></td>
+	</tr>
+	<tr>
+		<th>Password</th>
+		<td>:</td>
+		<td><input class="form-control" type="password" placeholder="password"  name="txtuser_password" class=""></td>
+	</tr>
+	<tr>
+		<th>Amount</th>
+		<td>:</td>
+		<td><input class="form-control" type="number" name="txt_user_amount" placeholder="{{h}}" ></td>
+	</tr>
+	<tr>
+		<th>Date</th>
+		<td>:</td>
+		<td><input class="form-control" type="date" id="datetimepicker2" name="txt_user_date" ></td>
+	</tr>
+	<tr>
+		<th><input class=" btn btn-success"  style="width:100%;" type="submit" name="" value="Boook" ></th>
+		<td> </td>
+		<td><a href="/info/{{a}}"><input class="form-control btn-danger" type="button" name="" value="cancel" ></a></td>
+	</tr>
+
+	
+
+
+</table>
+	<br>
+
+	
+	<h4>New User <a href="/user-registration/">SignUp Here</a></h4>
+	<br></center></div>
+</section>
+
+
+
+
+</form>
+
+{% endfor %}
+</body>
+{% endblock %}

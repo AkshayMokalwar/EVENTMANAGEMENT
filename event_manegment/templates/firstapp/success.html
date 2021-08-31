@@ -1,0 +1,18 @@
+
+{% extends 'firstapp/index.html' %}
+
+{% load staticfiles %}
+{% block content %}
+<head>
+	<title>success</title>
+
+<a href="/user-dashboard/">Back</a>
+	<center>
+<h1>success </h1>
+
+{%if msg %}	
+
+
+<h1>{{msg}}</h1>
+{%endif%}
+{% endblock %}

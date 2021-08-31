@@ -1,0 +1,150 @@
+
+{% extends 'firstapp/index.html' %}
+
+{% load staticfiles %}
+{% block content %}
+<head>
+	<title>Admin_dashboard</title>
+</head>
+<body>
+
+{%if record%}
+<h1>Admin Datails</h1>
+{%if msg%}<h1>{{msg}}</h1>
+{%endif%}
+<table cellspacing="10" cellpadding="10"  border="1" class="tbl-content" >
+	<thead>
+		<th>Admin Full Name</th>
+		
+		<th>Email</th>
+		<th>password</th>
+		<th>Address</th>
+		<th>Mobile number</th>
+		<th><!-- user ID --></th>
+	</thead>
+	<tr>
+		{% for adminID, admin_first_name , admin_last_name ,admin_email,user_pass,hall_name,hall_add,hall_price,hall_capacity,admin_mobile,hall_img in record%}
+		<td>{{admin_first_name}} {{admin_last_name}}</td>
+		<!-- <td>{{b}}</td> -->
+		<td>{{admin_email}}</td>
+		<td>{{user_pass}}</td>
+		<td>{{hall_add}}</td>
+		<td>{{admin_mobile}}</td>
+		<!-- <td>{{userID}}</td> -->
+		<td><a href="/edit/b/{{adminID}}">Edit account</a></td>
+		<!-- <td><a href="/delete/b/{{adminID}}">Delete account </a></td> -->
+		{% endfor %}
+		
+	</tr>
+</table>
+
+
+{% endif %}
+
+
+
+{%if bookings%}
+
+<br>
+<center>
+<div class="tbl-content" >
+	{%if total_earings_records%}
+{%for a,b,c in total_earings_records%}
+<h1>Earings Details</h1>
+<table cellspacing="20px" cellpadding="20px"  border="0" >
+	
+	<tr>
+		<th>Total Number of  bookings</th>
+		<td>: </td>
+		<td>{{d}}</td>
+	</tr>
+	<tr>
+		<th>Total advance Earings</th>
+		<td> </td>
+		<td>{{b}}/-₹</td>
+	</tr>
+	<tr><th></th>
+		<td>+</td>
+		<td></td></tr>
+	<tr>
+		<th>Total pending Earings </th>
+		<td> </td>
+		<td>{{c}}/-₹</td>
+	</tr>
+	
+	<tr>
+		<th><hr style="border: 1px solid red;">Total Earnings</th>
+		<td> </td>
+		<td><hr style="border: 1px solid red;">{{a}}/-₹</td>
+	</tr>
+</table>
+
+{%endfor%}
+{%else%}<p>No Earings</p>
+{%endif%}
+
+<h1>Booking Details</h1>
+	{% for user_first_name,user_lastname,user_emailID,user_add,user_mobile,userID,booking_total,booking_advance,booking_balance,booking_date,bookingID in bookings %}
+
+<table cellspacing="20" cellpadding="20"  border="0" >
+	
+	
+	<tr></tr>
+	<tr>
+		<th>Booking ID</th>
+		<td>: </td>
+		<td>{{bookingID}}</td>
+	</tr>
+	
+	<tr>
+		<th>user Name</th>
+		<td>:</td>
+		<td>{{user_first_name}} {{user_lastname}}</td>
+	</tr>
+	<tr>
+		<th>User Address</th>
+		<td>:</td>
+		<td>{{user_add}}</td>
+	</tr>
+	<tr>
+		<th>User Mobile</th>
+		<td>:</td>
+		<td>{{user_mobile}}</td>
+	</tr>
+	<tr>
+		<th>User email</th>
+		<td>:</td>
+		<td>{{user_emailID}}</td>
+	</tr>
+
+	<tr>
+		<th>Total ammount</th>
+		<td>:</td>
+		<td>{{booking_total}}</td>
+	</tr>
+	<tr>
+		<th>Advance Ammount</th>
+		<td>:</td>
+		<td>{{booking_advance}}</td>
+	</tr>
+	<tr>
+		<th>Balance Ammount</th>
+		<td>:</td>
+		<td>{{booking_balance}}</td>
+	</tr>
+	<tr>
+		<th>Booking date</th>
+		<td>:</td>
+		<td>{{booking_date}}</td>
+	</tr>
+	<br>
+{% endfor %}
+
+</table>
+
+</div></center>
+
+{%else %}<p>No booking</p>
+{%endif%}
+<br>
+{% endblock %}

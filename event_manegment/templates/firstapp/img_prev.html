@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<title></title>
+	
+</head>
+<body>
+
+{% if path %}
+
+<h1>{{path}}</h1>
+<Script type="text/javascript">
+		var k= document.getElementById("img_up");
+		alert({{path}});
+		alert("hi");
+		k.src="{%static "+{path}+"%}";
+	</Script>
+<!-- <img src="{%static "images_uploaded/{{b}}" %}"> -->
+<img src="{%static " /{{path}}" %}">
+<img src="{{path}}" id="img_up">
+
+{% endif %}
+</body>
+</html>

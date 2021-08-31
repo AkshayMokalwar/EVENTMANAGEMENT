@@ -1,0 +1,17 @@
+{% extends 'firstapp/index.html' %}
+{% block content %}
+{% load staticfiles %}
+
+<form method="post" enctype="multipart/form-data" style="">
+{% csrf_token %}	
+
+upload view
+
+
+<br>
+<input	type="text" name="txtname" placeholder="name" value=""	>
+<input type="file" name="uploaded_file" >
+<input type="submit" value="upload">
+
+</form>
+{%endblock %}	

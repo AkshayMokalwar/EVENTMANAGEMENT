@@ -1,0 +1,93 @@
+
+{% extends 'firstapp/index.html' %}
+
+{% load staticfiles %}
+{% block content %}
+<head>
+	<title>user_dashboard</title>
+</head>
+<h1>user_dashboard</h1>
+
+
+{%if record%}
+<h1>User Datails</h1>
+<table cellspacing="10" cellpadding="10"  border="1" style="font-size:24px;">
+	<thead>
+		<th>User Full Name</th>
+		
+		<th>Email</th>
+		<th>password</th>
+		<th>Address</th>
+		<th>Mobile number</th>
+		<!-- <th>user ID</th><td>:</td> -->
+	</thead>
+	<tr>
+		{% for a3 , b3,c3,d3,e3,f3,g3 in record%}
+		<td>{{a3}} {{b3}}</td>
+		<!-- <td>{{b}}</td> -->
+		<td>{{c3}}</td>
+		<td>{{d3}}</td>
+		<td>{{e3}}</td>
+		<td>{{f3}}</td>
+		<!-- <td>{{g}}</td> -->
+		{% endfor %}
+		
+	</tr>
+</table>
+{% endif %}
+
+
+
+
+
+
+{% endif %}
+
+{%if bookings%}
+{% for admin_ID,admin_firstname,admin_lastname,admin_emailID,hall_name,hall_add,hall_capasity,admin_mobile,hall_image,booking_total,booking_advance,booking_balance,booking_date,bookingID in bookings %}
+<br>
+<center>
+<div class="tbl-content" >
+<table cellspacing="20" cellpadding="20" class="tbl-content menu" border="0" >
+
+	<tr>
+		<th>Booking ID</th><td>: </td>
+		<td>{{bookingID}}</td>
+	</tr>
+	<tr>
+		<th>Hall Name</th><td>:</td>
+		<td>{{hall_name}}</td>
+	</tr>
+	<tr>
+		<th>Admin Name</th><td>:</td>
+		<td>{{admin_firstname}} {{admin_lastname}}</td>
+	</tr>
+	<tr>
+		<th>Hall Address</th><td>:</td>
+		<td>{{hall_add}}</td>
+	</tr>
+	<tr>
+		<th>Total ammount</th><td>:</td>
+		<td>{{booking_total}}</td>
+	</tr>
+	<tr>
+		<th>Advance</th><td>:</td>
+		<td>{{booking_advance}}</td>
+	</tr>
+	<tr>
+		<th>Balance</th><td>:</td>
+		<td>{{booking_balance}}</td>
+	</tr>
+	<tr>
+		<th>Booking date</th><td>:</td>
+		<td>{{booking_date}}</td>
+	</tr>
+	<br>
+</div>
+{% endfor %}
+</table>
+
+{%else %}<p>No booking</p>
+{%endif%}
+<br>
+{% endblock %}

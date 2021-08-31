@@ -1,0 +1,317 @@
+
+
+body{
+  		color: black;
+  		background-color: white;
+      font-family: Alpha crisp;
+    }
+  	h1{
+  		font-family:Dishonorable Mention;
+  		font-size:72px;
+  	}
+    
+    p{
+      font-size:14px;
+  	}
+
+  div#login a{
+    display:inline-block;
+    font-size: 36px;
+
+    font-family: Romande ADF Script Std;
+  }
+ 
+   section.info{
+    width: 100%;
+    height:800px;
+    border-bottom:2px solid black;
+   }
+  
+   div.section-bgimage{
+    width: 100%;
+    height: 800px;
+    opacity: 0.5;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+   }
+    div#section-text{
+
+   margin-top:-400px;
+   margin-left: 40%;
+   }
+    div#section-text1{
+
+   margin-top:-200px;
+   margin-left: 40%;
+   }
+    div#section-text p{
+   font-size: 72px;
+   font-color:black; 
+   }
+   div#section-text b{
+   font-size:84px;
+   color:green; 
+   font-weight: bold;
+   }
+    div#section-text1 p{
+   font-size: 72px;
+   font-color:black; 
+   }
+   div#section-text1 b{
+   font-size:84px;
+   color:green; 
+   font-weight: bold;
+   }
+   
+
+    footer {
+      padding: 25px;
+      background-color:#222;
+      color: white;
+      font-family: regular;
+    }
+  
+
+    .menu-image img{
+      
+
+      padding:10px;
+  }
+   .menu-image p{
+    font-size:18px;
+    padding-bottom: 10px;
+  }
+   .menu-image h3{
+    font-size:24px;
+    font-weight: bold;
+    padding-bottom: 10px;
+   }
+   div#menu{
+    padding-bottom: 0px;
+    padding-right:0px;
+   }
+   div#menu b{
+      color: green;
+      font-size: 68px;
+   }
+    .menu-image{
+      /*opacity: .5;*/
+    display: block;
+    text-align:center;
+    border:2px solid #222;
+    /*box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;*/
+    margin:0px;
+    padding-top:20px;
+   }
+   .menu-image:hover{
+    /*opacity: 1;*/
+    /*box-shadow: 5px 10px 20px #aaa;*/
+    border:2px solid red;
+    box-shadow: 0 2rem 4rem rgba(0,0,0,.275)!important;
+    /*line-height: 1;*/
+    /*margin-left:5%;*/
+    margin:0px;
+   }
+   .menu{
+    /*padding-bottom:10px;*/
+   }
+
+
+
+#contact p{
+  font-size:24px;
+  padding: 20px;
+}
+#about p{font-size:28px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* NAVBAR CSS */
+    .class-navbar a{
+      /*margin-top:100px;*/
+      color: grey;
+      font-size:36px;
+       font-weight: bold;
+      display: inline-block;
+      
+      
+      padding-right:1%;
+      font-family: Romande ADF Script Std;
+    }
+    .class-navbar a:hover{
+      color: green;
+      font-size:36px;
+       
+       font-weight: bold;
+       
+      display: inline-block;
+      /*font-weight:800;*/
+      
+      
+
+    }
+   .class-navbar a.icon{
+      display: none;
+    }
+     b{ font-size:36px;
+      }
+    .class-navbar a#logo{
+          display: inline-block;
+          margin-left:-4%;
+          padding-left: 2%;
+          padding-right: 5%;
+        }     
+
+        i.text-data {
+      font-weight:bold;
+      font-size:36px;
+      color:green; 
+    }
+    i.text-data2 {
+      font-weight:bold;
+      font-size:36px;
+      color:black; 
+    }
+
+    /*table content*/
+    .tbl-content{
+      font-size:48px;
+    }
+  @media (max-width: 767px) {
+      .class-navbar a{
+          display: none;
+          font-size:36px;
+      }
+      .class-navbar a#logo{
+          display: block inline;
+          font-size:24px;
+          padding: 10px; 
+      }
+      .class-navbar a#bar{
+          float: right;
+          display: block;
+          padding: 0px;
+          margin-right:30px;
+          margin-top:10px;
+      }
+        b{
+          font-size:28px;
+      }
+      div.nav-right{
+          display: none;
+      }
+
+      /*respoonsive*/
+      a.icon.responsive{
+          display: none;
+      }
+      .class-navbar.responsive a{
+          display:block;
+          font-size:36px;
+          text-align-last: left;
+      }
+      .class-navbar.responsive a:hover{
+          background-color: orange;
+      }
+      .class-navbar.responsive  a#bar{
+          display:none;
+      }
+     .class-navbar.responsive  a#cross{
+          float: right;
+          display: block;
+          padding: 0px;
+          margin-right:20px;
+          margin-top:10px;
+    }
+    .tbl-content{
+      font-size:28px;
+    }
+    .info-form-ke-uperwala{
+      padding: 5%;
+    }
+
+
+}
+  @media (max-width: 600px) {
+    h1 {
+      font-size:48px;
+    }
+    /* menu list CSS*/
+    .menu-image{
+      width:90%;
+    margin-top: 20px;
+    /*margin-left: 20px;*/
+    /*margin-right: 10px;*/
+   }
+   
+
+  div#menu b{
+      color: green;
+      font-size: 48px;
+   }
+   .menu-image:hover{
+    /*width:90%;*/
+    margin-top:10px;
+    padding: 0px;
+   }
+   .well{
+  background-color: #bbb;
+  width: 90%;
+  margin-left: 5%
+  }
+   /*Section CSS*/
+   section.info{
+    height: 600px;
+    border-bottom:2px solid gray; 
+   }
+  div.section-bgimage{
+      width: 100%;
+      height: 600px;
+      opacity: .5;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-size: cover;
+   }
+  div#section-text{
+       margin-top:-370px;
+       margin-left: 50px;
+   }
+   div#section-text p{
+       font-size:36px;
+       display: inline;
+       font-weight: bold;
+     }
+   div#info1{
+     height: 600px;
+  }
+   div#info2{
+      height: 600px;
+    }
+   div#info3{
+      height: 600px;
+   }
+
+   /*Footer CSS*/
+   footer {
+      padding: 25px;
+      background-color:#222;
+      color: white;
+    }
+     .tbl-content{
+      font-size:18px;
+    }
+    .info-form-ke-uperwala{
+      padding:10px;
+    }
+    .info-form-ke-uperwala input{
+     width:75%; 
+    }
+
+    
+  }
+  
+  }
