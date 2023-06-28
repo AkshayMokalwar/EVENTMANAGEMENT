@@ -1,0 +1,108 @@
+
+{% extends 'firstapp/index.html' %}
+
+{% load static %}
+{% block content %}
+<head>
+	<title>user_dashboard</title>
+</head>
+<body>
+<h1>user_dashboard</h1>
+
+<div class="tbl-content" >
+	{%if msg%}<h1>{{msg}}</h1>
+{%endif%}
+{%if record_count%}
+<h1>User Datails</h1>
+
+<table cellspacing="10" cellpadding="10"  border="1" class="tbl-content" >
+	<thead>
+		<th>User Full Name</th>
+		
+		<th>Email</th>
+		<th>password</th>
+		<th>Address</th>
+		<th>Mobile number</th>
+		<th><!-- user ID --></th>
+	</thead>
+	<tr>
+		{% for user_first_name , user_last_name ,user_email,user_pass,user_add,user_mobile,userID,pic in record%}
+		<td>{{user_first_name}} {{user_last_name}}</td>
+		<!-- <td>{{b}}</td> -->
+		<td>{{user_email}}</td>
+		<td>{{user_pass}}</td>
+		<td>{{user_add}}</td>
+		<td>{{user_mobile}}</td>
+		<!-- <td>{{userID}}</td> -->
+		<td><a href="/edit/a/{{userID}}/">Edit account</a></td>
+		<!-- <td><a href="/delete/a/{{userID}}">Delete account </a></td> -->
+		{% endfor %}
+		
+	</tr>
+</table>
+
+
+{% endif %}
+
+{%if bookings%}
+
+<br>
+<center>
+
+
+	{% for admin_ID,admin_firstname,admin_lastname,admin_emailID,hall_name,hall_add,hall_capasity,admin_mobile,hall_image,booking_total,booking_advance,booking_balance,booking_date,bookingID in bookings %}
+<table cellspacing="20" cellpadding="20"  border="0" >
+	
+	{{a}}
+	<tr></tr>
+	<tr>
+		<th>Booking ID</th>
+		<td>: </td>
+		<td>{{bookingID}}</td>
+	</tr>
+	<tr>
+		<th>Hall Name</th>
+		<td>:</td>
+		<td>{{hall_name}}</td>
+	</tr>
+	<tr>
+		<th>Admin Name</th>
+		<td>:</td>
+		<td>{{admin_firstname}} {{admin_lastname}}</td>
+	</tr>
+	<tr>
+		<th>Hall Address</th>
+		<td>:</td>
+		<td>{{hall_add}}</td>
+	</tr>
+	<tr>
+		<th>Total ammount</th>
+		<td>:</td>
+		<td>{{booking_total}}</td>
+	</tr>
+	<tr>
+		<th>Advance Ammount</th>
+		<td>:</td>
+		<td>{{booking_advance}}</td>
+	</tr>
+	<tr>
+		<th>Balance Ammount</th>
+		<td>:</td>
+		<td>{{booking_balance}}</td>
+	</tr>
+	<tr>
+		<th>Booking date</th>
+		<td>:</td>
+		<td>{{booking_date}}</td>
+	</tr>
+	<br>
+{% endfor %}
+
+</table>
+
+</div></center>
+
+{%else %}<p>No booking</p>
+{%endif%}
+<br>
+{% endblock %}

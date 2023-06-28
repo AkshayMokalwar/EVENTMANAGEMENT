@@ -1,0 +1,77 @@
+<head>
+	<title>admin_Edit</title>
+</head>
+{% extends 'firstapp/index.html' %}
+
+
+{% block content %}
+{% load static %}
+
+
+	<form method="post" enctype="multipart/form-data"  class="">
+		{% csrf_token %}
+		{% for adminID, admin_first_name , admin_last_name ,admin_email,user_pass,hall_name,hall_add,hall_price,hall_capacity,admin_mobile,hall_img in record%}
+		 		
+						<section  style="padding: 10%;" class="info-form-ke-uperwala">
+<br>
+		<center>
+	<div 	style="border:2px solid red; " >
+	<h1 >Admin Edit </h1><br>
+
+	<table cellspacing="10" cellpadding="10" border="0" class="tbl-content" >
+	<tr>
+		<th>Firstname</th>
+		<td>:</td>
+		<td><input class="form-control" type="text" placeholder="{{admin_first_name}}" value="{{admin_first_name}}"  name="txtfirstname"></td>
+	</tr>	
+	<tr>
+		<th>Lastname</th>
+		<td>:</td>
+		<td><input class="form-control" type="text" placeholder="{{admin_last_name}}" value="{{admin_last_name}}" name="txtlastname"></td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th>Mobile</th>
+		<td>:</td>
+		<td><input class="form-control" type="number" placeholder="{{admin_mobile}}" value="{{admin_mobile}}" name="txtmobile" ></td>
+	</tr>
+	<tr>
+		<th>Hall name</th>
+		<td>:</td>
+		<td><input class="form-control"  placeholder="{{hall_name}}" value="{{hall_name}}" name="txthallname"  ></td>
+	</tr>
+	
+	<tr>
+		<th>Hall Price</th>
+		<td>:</td>
+		<td><input class="form-control" type="number" placeholder="{{hall_price}}" value="{{hall_price}}"  name="txthallprice"  ></td>
+	</tr>
+	<tr>
+		<th>Password</th>
+		<td>:</td>
+		<td><input class="form-control" type="password" id="password" name="txtpassword" placeholder="Password" ></td>
+	</tr>
+	<tr>
+		<th>
+			<!-- <input class=" btn btn-success"  style="width:100%;" type="submit" name="" value="Boook" > -->
+
+			<input class=" btn btn-success" type="submit" id="submit" value="Update Profile" style="width:100%;">			
+		</th>
+		<td> </td>
+		<td><input class="form-control btn-danger" type="button" name="" value="cancel" ></td>
+	</tr>
+
+	
+{%endfor%}
+
+</table>
+	<br>
+</center></div>
+</section>
+
+
+
+</form>
+{%endblock %}

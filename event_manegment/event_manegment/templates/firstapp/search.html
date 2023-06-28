@@ -1,0 +1,114 @@
+
+{% extends 'firstapp/index.html' %}
+<style type="text/css">
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+} 
+</style>
+{% load static %}
+{% block content %}
+<form action="" method="POST">
+		{% csrf_token %}
+
+		<!-- <select name="txtopt" type="submit" id="short-by">
+			<option  value="0">Sort By</option> -->
+			<a href="/sort_view/a/">Price</a>
+			<a href="/sort_view/b/">Capacity</a>
+		<!-- </select> -->
+		<!-- <input type="submit" value="short">  -->
+
+
+		<!-- <div class="row">
+		<div class="col-md-3 col-sm-2 "></div>
+		<input type="text" name="txtcity"  class="form-control col-md-5 col-sm-6" placeholder="Enter City name"> 
+		<input type="submit" class="btn btn-primary col-md-1 col-sm-2" style="display:inline"  value="search">
+		<div class="col-md-3 col-sm-2 "></div></div> -->
+<!-- </form>
+{% if records %}
+<table cellspacing="10" cellpadding="10" border="0">
+	<thead>
+		<th>Hall Name</th>
+		<th>Hall Price </th>
+		<th>Hall Address</th>	
+		<th>Hall Capacity</th>	
+		<th>Hall image</th>
+	</thead>
+	{% for a,b,c,d,e,f,g,h,i,j,k in records%}
+	<tr>
+		<td>{{f}}</td>
+		<td>{{h}}</td>
+		<td>{{g}}</td>
+		<td>{{i}}</td>
+		<td>{{k}}</td>
+		<td>
+			<a href="/info/{{a}}">View More Info</a>
+		</td>
+	</tr>
+	
+	{% endfor %}
+</table> -->
+
+
+<!-- <div class="row"><font class="heading">hello</font></div> -->
+
+	<hr>
+
+<div class="container" 	>
+   <center><b>Halls and Lawn</b>
+  	<div class="row">
+		  
+  		{% for a,b,c,d,e,f,g,h,i,j,k in records%}
+
+		   <div class="col-lg-4  col-md-4 col-sm-6 menu">
+		      <div class="menu-image">
+		      	<img class="img-fluid" src="{{k.url}}" width="90%"  alt="{{k.url}}">
+		      	
+				  <!-- <img class="img-fluid" src="{% static 'images_uploaded/{{k}}' %}"  alt="{{k}}"> -->
+		      	<!-- <div class="uploaded_img"></div> -->
+		      	<!-- <style>
+		      		.uploaded_img{
+		      			width:200px;
+		      			height:300px;
+		      			background-image: url("{% static 'images_uploaded/{{k}}' %}");
+		      		}
+		      	</style> -->
+		      	<!-- <p>image name:{{k}}</p> -->
+		      	<h5>Hall Name : <i class="text-data2">{{f}}</i></h5>
+		      	<h5>Hall Price :<i class="text-data">{{h}}/-$</i></h5>
+		      	<h5>Hall Capacity : <i class="text-data2">{{i}}</i></h5>
+		      	<h5>Hall Address : <i class="text-data2">{{g}}</i></h5>
+		      	<p><a href="/info/{{a}}/">View More Info</a></p>
+		    	</div>
+			</div>
+  		
+
+    {% endfor %}
+  </div>
+
+<br>
+</center>
+</div>
+
+
+
+</form>
+
+{% endif %}
+
+{% endblock %}

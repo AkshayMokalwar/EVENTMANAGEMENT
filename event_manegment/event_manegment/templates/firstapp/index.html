@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head> <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+	<title>homepage</title>
+	 <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<script src="https://kit.fontawesome.com/yourcode.js"></script>
+
+<link rel="stylesheet" href="{%static '/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{%static '/bootstrap/font-awesome/4.5.0/css/font-awesome.min.css' %}">
+ 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/4.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="{% static '/boostrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'JS/script.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{%static 'CSS/style2.css' %}">
+
+
+	<style>
+
+    body{
+		/*font-size: 36px;*/
+
+	}
+	input{
+		font-size: 48px;
+	}
+	
+	div{
+		/*margin-top:10px;*/
+	}
+   ul li a{
+    /*font-family:Dishonorable Mention;*/
+      font-size:48px;
+
+      text-decoration:none;
+      
+  }
+  ul li a:hover{
+    /*font-family:Dishonorable Mention;*/
+      font-size:48px;
+      color:green;
+      text-decoration:none;
+      
+  }
+
+	   div#info1{
+    /*for new image when every time refresh use this link*/
+    /*background-image: url(" https://source.unsplash.com/1600x900/?Restaurant menu, Mini bar");*/
+    background-image: url("{% static 'photos/1.jpg' %}");
+  }
+   div#info2{
+   
+    /*for new image when every time refresh use this link*/
+    /*background-image: url("https://source.unsplash.com/1600x900/?food,chef,dish,hotel");*/
+    background-image: url("{% static 'photos/2.jpg' %}");
+  }
+   div#info3{
+    /*for new image when every time refresh use this link*/
+    /*background-image: url("https://source.unsplash.com/1600x900/?hotel,delicious,,dish,");*/
+    background-image: url("{% static 'photos/3.jpg' %}");
+  }
+  div#info3{
+    /*for new image when every time refresh use this link*/
+    /*background-image: url("https://source.unsplash.com/1600x900/?hotel,delicious,,dish,");*/
+    background-image: url("{% static 'photos/4.jpg' %}");
+  }
+
+</style>
+
+<body>
+ <center>
+<nav class="class-navbar" id="mynavbar">
+  <a href="#" id="logo"  class="animate__animated  animate__fadeInDown "><b>EventManegement</b></a>
+  <a href="javascript:void(0);" class="icon" id="bar" onclick="myFunction2()"><i class="fa fa-bars"></i></a>
+  <a href="javascript:void(0);" class="icon" id="cross" onclick="myFunction2()"><i class="fa fa-times"></i></a>
+  <a href="/home/">Home</a>
+  <a href="/login-user/">User Login</a>
+  <a href="/login-admin/">Admin Login</a>
+  <a href="/categoryname/">Category </a>
+  <a href="/Search/">Search </a>
+  <a href="/about/">About Us</a>
+</nav>
+</center>
+
+
+{% load static %}
+		{% block content %}	
+    
+	 
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> 
+<i class="fa fa-angle-double-up"></i><br>Top</button>	
+		 <!-- <img src="{% static 'photos/1.jpg' %}" alt="My image"> -->
+
+
+
+<style type="text/css">
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+<section class="info" >
+  <div class="section-bgimage" id="info1" >
+      <div id="login" >
+        <center><b  style="color:black">Login</b>&nbsp;
+        <a href="/login-user/"><div id="box1" class="box"><h1>User</h1></div></a> <b>OR</b>
+        <a href="/login-admin/"><div id="box2" class="box"><h1>Admin</h1></div></a></center>
+      </div>
+
+</div>
+  <div id="section-text"   >
+    <!-- change the text here -->
+        <p><b>1</b> Welcome To EventManegement </p>
+  </div>
+</section>
+
+<!-- section 2 -->
+<section class="info" >
+  <div class="section-bgimage" id="info2" ></div>
+  <div id="section-text" >
+      <p ><b>2</b>Best Way to plan Event </p>
+  </div>
+</section>
+<!-- section 3 -->
+<section class="info" >
+  <div class="section-bgimage" id="info3" ></div>
+  <div id="section-text"  >
+      <p ><b>3</b> And at affordable price</p>
+  </div>
+</section>
+
+
+{% endblock %}
+	
+<footer class="container-fluid text-center"  >
+  
+  <!--  -->
+  <p>© Copyright 2020 | Terms of Use | Privacy Policy | Ad Choices | Cookie Policy</p>
+</footer>
+</body>
+</html>

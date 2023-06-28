@@ -1,0 +1,105 @@
+<head>
+	<title>admin_registrastion</title>
+</head>
+{% extends 'firstapp/index.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<body >
+	<form method="post" enctype="multipart/form-data"  class="">
+		{% csrf_token %}
+		 		
+	<section  style="padding: 10%;" class="info-form-ke-uperwala">
+<br>
+		<center>
+	<div 	style="border:2px solid red; " >
+	<h1 >Registration</h1><br>
+
+	<table cellspacing="10" cellpadding="10" border="0" class="tbl-content" >
+	<tr>
+		<th>Firstname</th>
+		<td>:</td>
+		<td><input class="form-control" type="text" placeholder="Firstname"  name="txtfirstname"></td>
+	</tr>	
+	<tr>
+		<th>Lastname</th>
+		<td>:</td>
+		<td><input class="form-control" type="text" placeholder="Lastname"  name="txtlastname"></td>
+	</tr>
+	<tr>
+		<th>Email ID</th>
+		<td>:</td>
+		<td><input class="form-control" type="E-mail" id="txtemail" placeholder="E-mail" name="txtemail" ><label id="Ibluser" style="color: red;visibility: hidden;">Invalid</label></td>
+	</tr>
+	<tr>
+		<th>Password</th>
+		<td>:</td>
+		<td><input class="form-control" type="password" id="password" name="txtpassword" placeholder="Password" ></td>
+	</tr>
+	<tr>
+		<th>Confirm Password</th>
+		<td>:</td>
+		<td><input class="form-control" type="password" id="password2" name="txtpassword" placeholder="Password" ></td>
+	</tr>
+	<tr>
+		<th>Mobile</th>
+		<td>:</td>
+		<td><input class="form-control" type="number" placeholder="Mobile No." name="txtmobile" ></td>
+	</tr>
+	<tr>
+		<th>Hall Name</th>
+		<td>:</td>
+		<td><input class="form-control"  placeholder="Hall Name" name="txthallname"  ></td>
+	</tr>
+	<tr>
+		<th>Hall Address</th>
+		<td>:</td>
+		<td><input class="form-control" placeholder="Hall Address" name="txthalladdress"  ></td>
+	</tr>
+	<tr>
+		<th>Hall Price</th>
+		<td>:</td>
+		<td><input class="form-control" type="number" placeholder="Hall Price $$" name="txthallprice"  ></td>
+	</tr>
+	<tr>
+		<th>Hall Capacity</th>
+		<td>:</td>
+		<td><input class="form-control"  type="number" placeholder="Hall Capasity" name="txthallcapacity"  ></td>
+	</tr>
+	<tr>
+		<th>Hall Image</th>
+		<td>:</td>
+		<td><input class="form-control" type="file" name="hall_image"  ></td>
+	</tr>
+	<tr>
+		<th>
+			<!-- <input class=" btn btn-success"  style="width:100%;" type="submit" name="" value="Boook" > -->
+
+			<input class=" btn btn-primary" style="width:100%;"type="button" id="sub" onclick="validate();" value="Submit" >
+			<input class=" btn btn-success" type="submit" id="submit" value="final submit "style="width:100%;display:none">			
+		</th>
+		<td> </td>
+		<td><input class="form-control btn-danger" type="button" name="" value="cancel" ></td>
+	</tr>
+
+	
+
+
+</table>
+	<br>
+
+	
+	<h4>Already registered then log in <a href="/user-registration/">log in Here</a></h4>
+	<br></center></div>
+</section>
+
+
+
+					
+			
+			</form>
+
+
+{%endblock %}
