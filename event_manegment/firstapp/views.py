@@ -298,7 +298,13 @@ def user_registration_view(request):
 		password1=request.POST['txtpassword']
 		add=request.POST['txtaddress']
 		mobile1=request.POST['txtmobile']
-		uploadedfile=request.FILES["profile_image"]
+		uploadedfile=None
+		try:
+			uploadedfile=request.FILES["profile_image"]
+		except Exception as e :
+			print('Eroor : ',e)
+
+		print('uploadedfile : ',uploadedfile)
 		format_data = "%d%m%y%H%M%S%f"
 		dt_ts =datetime.datetime.now().strftime(format_data)
 		user=tbluser(user_ID=dt_ts,firstname=firstname1,lastname=lastname1,user_email_ID=email1,user_password=password1,user_address=add,user_mobile_number=mobile1,profilepicture=uploadedfile)
@@ -318,8 +324,11 @@ def admin_registration_view(request):
 		hallname1=request.POST['txthallname']
 		hallprice1=request.POST['txthallprice']
 		hallcapasity1=request.POST['txthallcapacity']
-
-		uploadedfile=request.FILES["hall_image"]
+		uploadedfile=None
+		try:
+			uploadedfile=request.FILES["hall_image"]
+		except Exception as e:
+			print(e)
 		format_data = "%d%m%y%H%M%S%f"
 		dt_ts =datetime.datetime.now().strftime(format_data)
 		

@@ -139,6 +139,8 @@
 			
 
 	<section  style="padding: 10%;" class="info-form-ke-uperwala">
+		{% now "d-m-y" as date %}
+		{% now "j-m-Y" %}
 <br>
 		<center>
 	<div 	style="border:2px solid red; " >
@@ -161,9 +163,10 @@
 		<td><input class="form-control" type="number" name="txt_user_amount" placeholder="{{h}}" ></td>
 	</tr>
 	<tr>
-		<th>Date</th>
+		<th>Datem </th>
 		<td>:</td>
-		<td><input class="form-control" type="date" id="datetimepicker2" name="txt_user_date" ></td>
+		
+		<td><input class="form-control" type="date" id="datetimepicker2" min="{% now 'd-m-y' as date %}" name="txt_user_date" ></td>
 	</tr>
 	<tr>
 		<th><input class=" btn btn-success"  style="width:100%;" type="submit" name="" value="Boook" ></th>
